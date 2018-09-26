@@ -1,0 +1,13 @@
+{
+  "name": "ngm-base",
+  "version": "0.0.2",
+  "peerDependencies": {
+    "@angular/common": "^6.1.4",
+    "@angular/core": "^6.1.4",
+    "@angular/cdk": "^6.4.0",
+    "@ngx-translate/core": "^10.0.2",
+    "@ngx-translate/http-loader": "^3.0.1",
+    "ng-http-loader": "^2.3.0",
+    "rxjs": "^6.2.2"
+  }
+}
