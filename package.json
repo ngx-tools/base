@@ -1,6 +1,10 @@
 {
   "name": "ngm-base",
   "version": "0.0.3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mstmvd/ngm-base.git"
+  },
   "peerDependencies": {
     "@angular/common": "^6.1.4",
     "@angular/core": "^6.1.4",
