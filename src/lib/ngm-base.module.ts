@@ -1,10 +1,10 @@
 import {ModuleWithProviders, NgModule} from '@angular/core';
-import {BaseService} from './base.service';
 import {HttpClient} from '@angular/common/http';
 import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {NgHttpLoaderModule} from 'ng-http-loader';
 import {Const} from './const';
+import {FxLayoutOption, MediaQuery} from './ngm-base.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -26,20 +26,24 @@ export function HttpLoaderFactory(http: HttpClient) {
     providers: [],
     exports: []
 })
-export class BaseModule {
+export class NgmBaseModule {
     static forRoot(config?: BaseConfig): ModuleWithProviders {
         if (config) {
             if (config.default_lang) {
                 Const.defaultLang = config.default_lang;
             }
+            if (config.fxLayoutOption) {
+                Const.fxLayoutOption = config.fxLayoutOption;
+            }
         }
         return {
-            ngModule: BaseModule,
-            providers: [BaseService, TranslateService]
+            ngModule: NgmBaseModule,
+            providers: [TranslateService]
         };
     }
 }
 
 export interface BaseConfig {
-    default_lang: string;
+    default_lang?: string;
+    fxLayoutOption?: Map<MediaQuery, FxLayoutOption>;
 }

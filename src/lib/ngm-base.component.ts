@@ -5,20 +5,22 @@ import {Injectable, OnInit} from '@angular/core';
 
 export enum MediaQuery {xs, sm, md, lg, xl}
 
+export interface FxLayoutOption {
+    cols: number;
+    margin: string;
+    padding: string;
+    gap: string;
+}
+
 @Injectable()
-export abstract class BaseComponent implements OnInit {
+export abstract class NgmBaseComponent implements OnInit {
     public dir;
-    public cols = 12;
-    public gap = '2.5%';
-    public margin = '2.5%';
+    public cols = Const.cols;
+    public gap = Const.gap;
+    public margin = Const.margin;
+    public padding = Const.padding;
     public mq: MediaQuery = undefined;
-    protected grid = new Map([
-        [MediaQuery.xs, {cols: 4, margin: '5.6%', gap: '6.4%'}],
-        [MediaQuery.sm, {cols: 4, margin: '5.6%', gap: '6.4%'}],
-        [MediaQuery.md, {cols: 12, margin: '2.5%', gap: '2.5%'}],
-        [MediaQuery.lg, {cols: 12, margin: '2.5%', gap: '2.5%'}],
-        [MediaQuery.xl, {cols: 12, margin: '2.5%', gap: '2.5%'}]
-    ]);
+    protected grid: Map<MediaQuery, FxLayoutOption> = Const.fxLayoutOption;
 
     constructor(public translate: TranslateService, private breakpointObserver: BreakpointObserver) {
         translate.setDefaultLang(Const.defaultLang);
@@ -78,6 +80,7 @@ export abstract class BaseComponent implements OnInit {
         this.mq = mq;
         me.cols = this.grid.get(this.mq).cols;
         me.margin = this.grid.get(this.mq).margin;
+        me.padding = this.grid.get(this.mq).padding;
         me.gap = this.grid.get(this.mq).gap;
     }
 }
