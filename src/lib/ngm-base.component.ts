@@ -2,15 +2,7 @@ import {Const} from './const';
 import {LangChangeEvent, TranslateService} from '@ngx-translate/core';
 import {BreakpointObserver, Breakpoints, BreakpointState} from '@angular/cdk/layout';
 import {Injectable, OnInit} from '@angular/core';
-
-export enum MediaQuery {xs, sm, md, lg, xl}
-
-export interface FxLayoutOption {
-    cols: number;
-    margin: string;
-    padding: string;
-    gap: string;
-}
+import {FxLayoutOption, MediaQuery} from "./types";
 
 @Injectable()
 export abstract class NgmBaseComponent implements OnInit {

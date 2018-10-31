@@ -4,7 +4,7 @@ import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {NgHttpLoaderModule} from 'ng-http-loader';
 import {Const} from './const';
-import {FxLayoutOption, MediaQuery} from './ngm-base.component';
+import {FxLayoutOption, MediaQuery} from "./types";
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {

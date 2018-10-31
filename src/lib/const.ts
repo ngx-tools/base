@@ -1,4 +1,4 @@
-import {MediaQuery} from './ngm-base.component';
+import {MediaQuery} from "./types";
 
 export class Const {
     static rtlLangs = ['fa'];
