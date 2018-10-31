@@ -1,6 +1,6 @@
 {
   "name": "ngm-base",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/mstmvd/ngm-base.git"
@@ -16,7 +16,7 @@
     "@angular/material": "^7.0.1",
     "@ngx-translate/core": "^10.0.2",
     "@ngx-translate/http-loader": "^3.0.1",
-    "ng-http-loader": "^2.3.0",
+    "ng-http-loader": "^3.2.0",
     "rxjs": "^6.3.3",
     "json2typescript": "^1.0.6"
   }
