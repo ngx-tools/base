@@ -26,11 +26,10 @@ export abstract class NgmBaseComponent implements OnInit {
         translate.onLangChange.subscribe((event: LangChangeEvent) => {
             localStorage.setItem('locale', event.lang);
         });
-
-        this.dir = Const.rtlLangs[translate.currentLang] ? 'rtl' : 'ltr';
+        this.dir = Const.rtlLangs.includes(translate.currentLang) ? 'rtl' : 'ltr';
         translate.onLangChange.subscribe(
             (event: LangChangeEvent) => {
-                this.dir = Const.rtlLangs[translate.currentLang] ? 'rtl' : 'ltr';
+                this.dir = Const.rtlLangs.includes(translate.currentLang) ? 'rtl' : 'ltr';
             }
         );
     }

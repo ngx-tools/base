@@ -5,6 +5,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {NgHttpLoaderModule} from 'ng-http-loader';
 import {Const} from './const';
 import {FxLayoutOption, MediaQuery} from './types';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -21,10 +22,14 @@ export function HttpLoaderFactory(http: HttpClient) {
             }
         }),
         NgHttpLoaderModule,
+        FlexLayoutModule
     ],
     declarations: [],
     providers: [],
-    exports: []
+    exports: [
+        TranslateModule,
+        FlexLayoutModule
+    ]
 })
 export class NgmBaseModule {
     static forRoot(config?: BaseConfig): ModuleWithProviders {
