@@ -2,7 +2,7 @@ import {Const} from './const';
 import {LangChangeEvent, TranslateService} from '@ngx-translate/core';
 import {BreakpointObserver, Breakpoints, BreakpointState} from '@angular/cdk/layout';
 import {Injectable, OnInit} from '@angular/core';
-import {FxLayoutOption, MediaQuery} from "./types";
+import {FxLayoutOption, MediaQuery} from './types';
 
 @Injectable()
 export abstract class NgmBaseComponent implements OnInit {
