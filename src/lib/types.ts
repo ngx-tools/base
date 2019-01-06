@@ -6,3 +6,9 @@ export interface FxLayoutOption {
     padding: string;
     gap: string;
 }
+
+export interface BaseConfig {
+    rtlLangs?: string[];
+    defaultLang?: string;
+    fxLayoutOption?: Map<MediaQuery, FxLayoutOption>;
+}

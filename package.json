@@ -1,6 +1,6 @@
 {
   "name": "ngm-base",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/mstmvd/ngm-base.git"
@@ -21,6 +21,7 @@
     "json2typescript": "^1.0.6",
     "angular2-toaster": "^6.1.0",
     "moment": "^2.22.2",
-    "moment-jalaali": "0.8.1"
+    "moment-jalaali": "0.8.1",
+    "jalali-moment": "^3.2.3"
   }
 }

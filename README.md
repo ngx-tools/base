@@ -41,6 +41,7 @@ import {NgmBaseModule} from 'ngm-base';
     imports: [
         BrowserModule,
         NgmBaseModule.forRoot({
+            rtlLangs: ['fa', 'ar'],
             default_lang: 'en',
             fxLayoutOption: new Map([
                                     [MediaQuery.xs, {cols: 4, margin: '5.6%', padding: '5.6%', gap: '6.4%'}],
@@ -55,43 +56,22 @@ import {NgmBaseModule} from 'ngm-base';
 })
 export class AppModule { }
 ```
+Remember that all parameters are optional. 
 ## Usage
-`NgmBaseModule` has an abstract class `NgmBaseComponent` that your component class should extends it.
+`NgmBaseModule` has a service `NgmBaseService` that you can inject it in any component.
 
 ```ts
-import {NgmBaseComponent} from 'ngm-base';
+import {NgmBaseService} from 'ngm-base';
 
-export class SampleComponent extends NgmBaseComponent {
+export class SampleComponent {
+    constructor(public baseService: NgmBaseService) {}
 }
 ```
-
-### Constructor
-If your controller has constructor you should call super constructor as below:
-
-```ts
-import { Component } from '@angular/core';
-import {NgmBaseComponent} from 'ngm-base';
-import {TranslateService} from '@ngx-translate/core';
-import {BreakpointObserver} from '@angular/cdk/layout';
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
-export class AppComponent extends NgmBaseComponent {
-
-    constructor(translate: TranslateService, breakpointObserver: BreakpointObserver) {
-        super(translate, breakpointObserver);
-    }
-}
-```
-
 ### Variables and Function
-By extending your component from `NgmBaseComponent` you can access to this parameters and functions
+By injecting `NgmBaseService` you can access to this parameters and functions
 #### Variables
 * `dir` Direction of app based on current language.
-* `gap` Space between to column in angular flex.
+* `gap` Space between two column in angular flex.
 * `margin` The margin.
 * `padding` The padding.
 * `mq` MediaQuery. Current screen size by angular.
@@ -105,10 +85,10 @@ By second parameter in `calc` you can override number of columns.
 ### Template files
 This example shows how to use NgmBase with [`angular material`](https://material.angular.io/) in template files:
 ```html
-<div [dir]="this.dir" [ngStyle]="{padding: this.padding, margin: this.margin}">
-    <div fxLayout="row" [fxLayoutGap]="this.gap">
-        <div [fxFlex]="calc(2)">sample text</div>
-        <div [fxFlex]="calc(10)">sample text</div>
+<div [dir]="this.dir" [ngStyle]="{padding: baseService.padding, margin: baseService.margin}">
+    <div fxLayout="row" [fxLayoutGap]="baseService.gap">
+        <div [fxFlex]="baseService.calc(2)">sample text</div>
+        <div [fxFlex]="baseService.calc(10)">sample text</div>
     </div>
 </div>
 ```

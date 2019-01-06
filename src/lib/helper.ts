@@ -1,7 +1,8 @@
 import {AbstractEntity} from './abstract-entity';
 import {Toast, ToasterService} from 'angular2-toaster';
 import {JsonConvert, ValueCheckingMode} from 'json2typescript';
-import * as jMoment from 'moment-jalaali';
+
+// import * as jMoment from 'jalali-moment';
 
 export class Helper {
     static equals(a, b) {
@@ -66,7 +67,7 @@ export class Helper {
         return entity;
     }
 
-    static toJalali(date, format = 'YYYY-MM-DD HH:mm:ss') {
-        return jMoment(date, 'YYYY-MM-DD HH:mm:ss').locale('fa').format(format);
-    }
+    // static toJalali(date, format = 'YYYY-MM-DD HH:mm:ss') {
+    //     return jMoment(date, 'YYYY-MM-DD HH:mm:ss').locale('fa').format(format);
+    // }
 }
