@@ -58,7 +58,7 @@ export class AppModule { }
 ```
 Remember that all parameters are optional. 
 ## Usage
-`NgmBaseModule` has a service `NgmBaseService` that you can inject it in any component.
+`NgmBaseModule` has a service `NgmBaseService` that you can inject it in any component. But don't forget to inject in `AppComponent`.
 
 ```ts
 import {NgmBaseService} from 'ngm-base';
