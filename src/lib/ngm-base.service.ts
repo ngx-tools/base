@@ -42,7 +42,7 @@ export class NgmBaseService {
         if (locale && locale !== 'undefined') {
             translate.use(locale);
         } else {
-            translate.use(config.defaultLang);
+            translate.use(this.defaultLang);
             localStorage.setItem('locale', translate.currentLang);
         }
         translate.onLangChange.subscribe((event: LangChangeEvent) => {

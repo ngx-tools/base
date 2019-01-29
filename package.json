@@ -1,6 +1,6 @@
 {
   "name": "ngm-base",
-  "version": "1.0.3",
+  "version": "1.0.7",
   "repository": {
     "type": "git",
     "url": "https://github.com/mstmvd/ngm-base.git"
@@ -9,18 +9,14 @@
   "author": "Mostafa Movahedi",
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": "^7.0.0",
-    "@angular/core": "^7.0.0",
-    "@angular/cdk": "^7.0.1",
-    "@angular/flex-layout": "^7.0.0-beta.19",
-    "@angular/material": "^7.0.1",
-    "@ngx-translate/core": "^10.0.2",
-    "@ngx-translate/http-loader": "^3.0.1",
-    "ng-http-loader": "^3.2.0",
-    "rxjs": "^6.3.3",
+    "@angular/core": ">=7.0.0",
+    "@angular/cdk": "=>7.0.0",
+    "@ngx-translate/core": "^11.0.1",
+    "@ngx-translate/http-loader": "^4.0.0",
+    "ng-http-loader": "^5.0.0",
     "json2typescript": "^1.0.6",
-    "angular2-toaster": "^6.1.0",
-    "moment": "^2.22.2",
-    "jalali-moment": "^3.2.3"
+    "angular2-toaster": "^7.0.0",
+    "jalali-moment": "^3.3.0",
+    "reflect-metadata": "^0.1.13"
   }
 }

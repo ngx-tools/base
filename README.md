@@ -1,7 +1,7 @@
 # ngm-base
 This is a base module for implementing angular apps.
 It provides base features for making your web app **Responsive** (also Adaptive), **Multi-Language** and **Multi-Direction**.
-And it is base for other modules like **ngm-dynamic-form** and **ngm-grid**
+And it is base for other modules like [**ngm-dynamic-form**](https://www.npmjs.com/package/ngm-dynamic-form) and [**ngm-grid**](https://www.npmjs.com/package/ngm-grid).
 
 ## Installation
 First you need to install the npm module:
